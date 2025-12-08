@@ -761,6 +761,61 @@
                       "properties": {
                         "type": {
                           "type": "string",
+                          "const": "fluxcd"
+                        },
+                        "with": {
+                          "type": "object",
+                          "properties": {
+                            "action": {
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "object",
+                                  "additionalProperties": {}
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "array"
+                                }
+                              ]
+                            },
+                            "enrich_alert": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
+                            },
+                            "enrich_incident": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_incident"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "config": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "with",
+                        "config"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
                           "const": "github"
                         },
                         "with": {
@@ -822,16 +877,16 @@
                               ]
                             },
                             "title": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/8/properties/with/properties/id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/9/properties/with/properties/id"
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/8/properties/with/properties/id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/9/properties/with/properties/id"
                             },
                             "labels": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/8/properties/with/properties/id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/9/properties/with/properties/id"
                             },
                             "issue_type": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/8/properties/with/properties/id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/9/properties/with/properties/id"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -889,7 +944,7 @@
                               ]
                             },
                             "gitlab_method": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/9/properties/with/properties/gitlab_url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/10/properties/with/properties/gitlab_url"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1002,7 +1057,7 @@
                               ]
                             },
                             "updateType": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/11/properties/with/properties/operationType"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/12/properties/with/properties/operationType"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1060,19 +1115,19 @@
                               ]
                             },
                             "alert_uid": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/12/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/title"
                             },
                             "message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/12/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/title"
                             },
                             "image_url": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/12/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/title"
                             },
                             "state": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/12/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/title"
                             },
                             "link_to_upstream_details": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/12/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/title"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1130,22 +1185,22 @@
                               ]
                             },
                             "method": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/url"
                             },
                             "headers": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/url"
                             },
                             "body": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/url"
                             },
                             "params": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/url"
                             },
                             "proxies": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/url"
                             },
                             "verify": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/13/properties/with/properties/url"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/url"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1202,40 +1257,40 @@
                               ]
                             },
                             "summary": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "status": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "affectedServices": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "event_type": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "details": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "alert_key": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "priority": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "images": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "links": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "custom_details": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/14/properties/with/properties/_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/_type"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1293,28 +1348,31 @@
                               ]
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "issue_type": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "project_key": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "board_name": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "issue_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "labels": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "components": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "custom_fields": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/15/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                            },
+                            "transition_to": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1372,31 +1430,31 @@
                               ]
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "issue_type": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "project_key": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "board_name": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "issue_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "labels": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "components": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "custom_fields": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "priority": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/16/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/summary"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1454,31 +1512,31 @@
                               ]
                             },
                             "workflow_full_sync": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "workflow_to_update_yaml": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "alert": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "fingerprint_fields": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "override_source_with": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "read_only": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "fingerprint": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "if": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "for": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/17/properties/with/properties/delete_all_other_workflows"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/18/properties/with/properties/delete_all_other_workflows"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1590,16 +1648,16 @@
                               ]
                             },
                             "project_name": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/19/properties/with/properties/team_name"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/team_name"
                             },
                             "title": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/19/properties/with/properties/team_name"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/team_name"
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/19/properties/with/properties/team_name"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/team_name"
                             },
                             "priority": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/19/properties/with/properties/team_name"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/team_name"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1657,34 +1715,34 @@
                               ]
                             },
                             "http_url": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "title": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "teams": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "repository_urls": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "services": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "started_at": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "ended_at": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "git_ref": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "should_delete": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "issued_at": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/20/properties/with/properties/incident_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/incident_id"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1742,10 +1800,10 @@
                               ]
                             },
                             "attachments": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/22/properties/with/properties/message"
                             },
                             "channel": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/21/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/22/properties/with/properties/message"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1803,13 +1861,13 @@
                               ]
                             },
                             "group_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/22/properties/with/properties/board_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/23/properties/with/properties/board_id"
                             },
                             "item_name": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/22/properties/with/properties/board_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/23/properties/with/properties/board_id"
                             },
                             "column_values": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/22/properties/with/properties/board_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/23/properties/with/properties/board_id"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1867,10 +1925,10 @@
                               ]
                             },
                             "as_dict": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/23/properties/with/properties/query"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/24/properties/with/properties/query"
                             },
                             "single_row": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/23/properties/with/properties/query"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/24/properties/with/properties/query"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1928,7 +1986,7 @@
                               ]
                             },
                             "topic": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/24/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/25/properties/with/properties/message"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -1986,10 +2044,10 @@
                               ]
                             },
                             "document": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/25/properties/with/properties/index"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/26/properties/with/properties/index"
                             },
                             "doc_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/25/properties/with/properties/index"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/26/properties/with/properties/index"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2102,40 +2160,40 @@
                               ]
                             },
                             "note": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "source": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "alias": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "responders": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "visible_to": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "actions": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "tags": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "details": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "entity": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "priority": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/27/properties/with/properties/user"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/user"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2193,34 +2251,37 @@
                               ]
                             },
                             "dedup": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "service_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                            },
+                            "routing_key": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "requester": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "incident_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "event_type": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "severity": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "source": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "priority": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "status": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "resolution": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/28/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2278,31 +2339,31 @@
                               ]
                             },
                             "urgency": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "incident": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "severities": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "incident_message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "status": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "destination_team_ids": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "destination_router_ids": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "destination_account_user_ids": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/29/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/title"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2360,10 +2421,10 @@
                               ]
                             },
                             "title": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/plan_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/31/properties/with/properties/plan_id"
                             },
                             "bucket_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/30/properties/with/properties/plan_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/31/properties/with/properties/plan_id"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2531,10 +2592,10 @@
                               ]
                             },
                             "status": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/33/properties/with/properties/fingerprint"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/34/properties/with/properties/fingerprint"
                             },
                             "chartConfig": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/33/properties/with/properties/fingerprint"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/34/properties/with/properties/fingerprint"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2592,13 +2653,13 @@
                               ]
                             },
                             "subject": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/34/properties/with/properties/project_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/35/properties/with/properties/project_id"
                             },
                             "priority_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/34/properties/with/properties/project_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/35/properties/with/properties/project_id"
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/34/properties/with/properties/project_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/35/properties/with/properties/project_id"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2656,13 +2717,13 @@
                               ]
                             },
                             "to": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/35/properties/with/properties/_from"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/36/properties/with/properties/_from"
                             },
                             "subject": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/35/properties/with/properties/_from"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/36/properties/with/properties/_from"
                             },
                             "html": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/35/properties/with/properties/_from"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/36/properties/with/properties/_from"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2720,10 +2781,10 @@
                               ]
                             },
                             "subject": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/36/properties/with/properties/to"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/37/properties/with/properties/to"
                             },
                             "html": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/36/properties/with/properties/to"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/37/properties/with/properties/to"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2781,7 +2842,7 @@
                               ]
                             },
                             "payload": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/37/properties/with/properties/table_name"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/table_name"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2839,28 +2900,28 @@
                               ]
                             },
                             "message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "user": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "s4_external_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "s4_status": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "s4_service": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "s4_location": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "s4_alerting_scenario": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "s4_filtering": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/38/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/title"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2918,25 +2979,25 @@
                               ]
                             },
                             "blocks": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "channel": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "slack_timestamp": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "thread_timestamp": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "attachments": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "username": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "notification_type": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/39/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/message"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -2994,19 +3055,19 @@
                               ]
                             },
                             "from_name": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/from_email"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/from_email"
                             },
                             "to_email": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/from_email"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/from_email"
                             },
                             "subject": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/from_email"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/from_email"
                             },
                             "body": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/from_email"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/from_email"
                             },
                             "html": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/40/properties/with/properties/from_email"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/from_email"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3064,31 +3125,31 @@
                               ]
                             },
                             "message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "incident_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "priority": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "tags": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "status": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "event_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "attachments": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "additional_json": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/41/properties/with/properties/notify_type"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/notify_type"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3146,22 +3207,22 @@
                               ]
                             },
                             "typeCard": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/message"
                             },
                             "themeColor": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/message"
                             },
                             "sections": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/message"
                             },
                             "schema": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/message"
                             },
                             "attachments": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/message"
                             },
                             "mentions": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/42/properties/with/properties/message"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/message"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3219,25 +3280,25 @@
                               ]
                             },
                             "topic_id": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "message": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "reply_markup": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "reply_markup_layout": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "parse_mode": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "image_url": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "caption_on_image": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/43/properties/with/properties/chat_id"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/chat_id"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3295,7 +3356,7 @@
                               ]
                             },
                             "to_phone_number": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/44/properties/with/properties/message_body"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/45/properties/with/properties/message_body"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3353,7 +3414,7 @@
                               ]
                             },
                             "params": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/45/properties/with/properties/body"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/46/properties/with/properties/body"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3411,7 +3472,7 @@
                               ]
                             },
                             "description": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/46/properties/with/properties/summary"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/47/properties/with/properties/summary"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3469,16 +3530,16 @@
                               ]
                             },
                             "summary": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/47/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/title"
                             },
                             "service": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/47/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/title"
                             },
                             "user": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/47/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/title"
                             },
                             "policy": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/47/properties/with/properties/title"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/title"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -3536,19 +3597,86 @@
                               ]
                             },
                             "start_time": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/topic"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/49/properties/with/properties/topic"
                             },
                             "duration": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/topic"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/49/properties/with/properties/topic"
                             },
                             "timezone": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/topic"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/49/properties/with/properties/topic"
                             },
                             "record_meeting": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/topic"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/49/properties/with/properties/topic"
                             },
                             "host_email": {
-                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/48/properties/with/properties/topic"
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/49/properties/with/properties/topic"
+                            },
+                            "enrich_alert": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
+                            },
+                            "enrich_incident": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_incident"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "config": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "with",
+                        "config"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "const": "zoom_chat"
+                        },
+                        "with": {
+                          "type": "object",
+                          "properties": {
+                            "severity": {
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "object",
+                                  "additionalProperties": {}
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {},
+                                  "additionalProperties": false
+                                },
+                                {
+                                  "type": "array"
+                                }
+                              ]
+                            },
+                            "title": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/50/properties/with/properties/severity"
+                            },
+                            "message": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/50/properties/with/properties/severity"
+                            },
+                            "tagged_users": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/50/properties/with/properties/severity"
+                            },
+                            "details_url": {
+                              "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/50/properties/with/properties/severity"
                             },
                             "enrich_alert": {
                               "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
@@ -6399,6 +6527,9 @@
                                   }
                                 ]
                               },
+                              "incident_key": {
+                                "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/steps/items/properties/provider/anyOf/45/properties/with/properties/incident_id"
+                              },
                               "enrich_alert": {
                                 "$ref": "#/definitions/KeepWorkflowSchema/properties/workflow/properties/on-failure/properties/provider/anyOf/0/properties/with/properties/enrich_alert"
                               },
@@ -7457,6 +7588,6 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "version": "0.46.3",
-  "$id": "https://raw.githubusercontent.com/keephq/keep-workflow-schema/v0.46.3/schema.json"
+  "version": "0.48.0",
+  "$id": "https://raw.githubusercontent.com/keephq/keep-workflow-schema/v0.48.0/schema.json"
 }
